@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -5,8 +6,14 @@ import java.util.ArrayList;
 public class LagerView {
     LagerController lagerController = new LagerController();
 
+    /**
+     * Menu angeschrieben
+     *
+     * @throws IOException
+     */
     public void menu()
     {
+        System.out.println("Produkte nach der Lageraktualisierung");
         aufrufen();
         ProduktRepository.anzeigen();
     }
@@ -33,6 +40,13 @@ public class LagerView {
 
         lagerController.substract(lager);
     }
-
+    /**
+     * Interface wird angeschaltet
+     *
+     * @throws IOException
+     */
+    public void run() throws IOException {
+        menu();
+    }
 
 }

@@ -18,23 +18,37 @@ public class ProduktRepository {
         ProduktRepository.produktRepository = produktRepository;
     }
 
+    /**
+     * add Object Product to repo
+     * @param produkt
+     */
     public void addProdukt(Produkt produkt)
     {
         produktRepository.add(produkt);
     }
 
+    /**
+     * delete Object Product from repo
+     * @param produkt
+     */
     public void deleteProdukt(Produkt produkt)
     {
         produktRepository.remove(produkt);
     }
 
+    /**
+     * update Object Product
+     * @param produkt
+     */
     public void updateProdukt(Produkt produkt)
     {
         for(Produkt p:produktRepository)
         {
             if(Objects.equals(produkt.getName(), p.getName()))
             {
-              p.setInitialleAnzahlProdukteAmLager(p.getInitialleAnzahlProdukteAmLager()-produkt.getInitialleAnzahlProdukteAmLager());
+              p.setInitialleAnzahlProdukteAmLager(produkt.getInitialleAnzahlProdukteAmLager());
+              p.setSKU(produkt.getSKU());
+              p.setPreis(produkt.getPreis());
             }
         }
     }
