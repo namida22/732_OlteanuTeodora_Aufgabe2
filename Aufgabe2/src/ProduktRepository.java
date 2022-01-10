@@ -38,4 +38,10 @@ public class ProduktRepository {
             }
         }
     }
+
+    public static void anzeigen()
+    {
+        for(Produkt produkt: produktRepository)
+            System.out.println(produkt);
+    }
 }
